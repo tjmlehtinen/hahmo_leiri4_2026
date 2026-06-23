@@ -4,6 +4,7 @@ public class PartSelector : MonoBehaviour
 {
     public Sprite[] parts;
     private SpriteRenderer partRenderer;
+    private int currentIndex = 0;
 
     void Awake()
     {
@@ -13,12 +14,17 @@ public class PartSelector : MonoBehaviour
     void Start()
     {
         //Debug.Log("skripti liitetty objektiin: " + name);
-        partRenderer.sprite = parts[1];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void ChangePart()
+    {
+        currentIndex = (currentIndex + 1) % parts.Length;
+        partRenderer.sprite = parts[currentIndex];
     }
 }
