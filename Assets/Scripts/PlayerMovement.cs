@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 moveInput = new Vector2();
     private Rigidbody2D body;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 10f;
 
     void Awake()
     {
