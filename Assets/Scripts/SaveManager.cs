@@ -3,6 +3,9 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public PartSelector hair;
+    public PartSelector eyes;
+    public PartSelector mouth;
+    public PartSelector head;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,10 +32,16 @@ public class SaveManager : MonoBehaviour
     public void SaveCharacter()
     {
         SavePart(hair, "hair");
+        SavePart(eyes, "eyes");
+        SavePart(mouth, "mouth");
+        SavePart(head, "head");
     }
 
     public void LoadCharacter()
     {
         LoadPart(hair, "hair");
+        LoadPart(eyes, "eyes");
+        LoadPart(mouth, "mouth");
+        LoadPart(head, "head");
     }
 }
