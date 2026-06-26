@@ -21,12 +21,19 @@ public class SaveManager : MonoBehaviour
     private void SavePart(PartSelector part, string id)
     {
         PlayerPrefs.SetInt(id + "sprite", part.GetIndex());
+        string colorString = ColorUtility.ToHtmlStringRGB(part.GetColor());
+        PlayerPrefs.SetString(id + "color", colorString);
     }
 
     private void LoadPart(PartSelector part, string id)
     {
         int loadedIndex = PlayerPrefs.GetInt(id + "sprite", 0);
         part.SetIndex(loadedIndex);
+        string colorString = PlayerPrefs.GetString(id + "color", "FFFFFF");
+        if (ColorUtility.TryParseHtmlString("#" + colorString, out Color color))
+        {
+            part.SetColor(color);
+        }
     }
 
     public void SaveCharacter()

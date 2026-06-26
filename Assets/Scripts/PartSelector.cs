@@ -38,4 +38,14 @@ public class PartSelector : MonoBehaviour
         currentIndex = newIndex;
         partRenderer.sprite = parts[currentIndex];
     }
+
+    public void SetColor(Color color)
+    {
+        partRenderer.color = color;
+    }
+
+    public Color GetColor()
+    {
+        return partRenderer.color;
+    }
 }
